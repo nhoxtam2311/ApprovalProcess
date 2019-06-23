@@ -32,6 +32,6 @@ export class CreateStaffComponent implements OnInit {
     ).subscribe(result=>{
       this.router.navigate(['viewStaff', result['_id']])
     })
-    
+    console.log(this.formdata)
   }
 }
