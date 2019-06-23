@@ -1,0 +1,47 @@
+<form [formGroup]="formdata" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Approval Form</h1>
+    <hr>
+
+    <label for="name"><b>Name of Event</b></label>
+    <input type="text" placeholder="Enter Event's Name" formControlName="name" required>
+
+    <label for="startingDate"><b>The Commencing Day</b></label>
+    <input type="date"  formControlName="startingDate" required>
+
+    <label for="endingDate"><b>The Ending Day</b></label>
+    <input type="date"  formControlName="endingDate" required>
+
+    <label for="deadline"><b>Deadline</b></label>
+    <input type="date"  formControlName="deadline" required>
+
+    <label for="description"><b>Description</b></label>
+    <input type="text" placeholder="Description" formControlName="description" required>
+
+    <label for="deadline"><b>Deadline</b></label>
+    <input type="date"  formControlName="deadline" required>
+
+    <label for="requestedDate"><b>Requested Date</b></label>
+    <input type="date" formControlName="requestedDate" required>
+
+    <label for="signedDate"><b>Signed Date</b></label>
+    <input type="date" formControlName="signedDate" required>
+
+    <label for="responsibleOffice"><b>Responsible Office</b></label>
+    <input type="text" formControlName="responsibleOffice" required>
+
+    <label for="signedOffice"><b>Signed By</b></label>
+    <select name="office" form="office">
+      <option value="analyst">Analyst Office</option>
+      <option value="develop">Develop Office</option>
+      <option value="director">Director Office</option>
+    </select>
+    
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="createbtn">Approve</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'w3-css/w3.css';
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+/* app-view-detail, app-view-project, app-view-user-story,app-view-task ,app-view-subtask, app-approve-form, app-create-office, app-create-staff, app-create-user-story, app-home-page{
+    position: absolute;
+    margin-top: 50px;
+    width: 100%;
+} */
+
+app-menu-task{
+    display: inline-block;
+    width: 15%;
+    height: 100vh;
+}
+background{
+    background-color: white;
+}
+
+app-menu-subtask{
+    display: inline-block;
+    width: 15%;
+    height: 100vh;
+}
+background{
+    background-color: white;
+}
+app-menu-user-story{
+    display: inline-block;
+    width: 15%;
+    height: 100vh;
+}
+background{
+    background-color: white;
+}
+input[type=button]{
+    float: right;
+    margin-top: 15px;
+    margin-right: 50px;
+    width: 150px;
+    height: 35px;
+    box-shadow: 5px 5px 5px #666;
+    font-size: 20px;
+    text-align: center;
+}
+input[type=button]:hover{
+    color: white;
+    background-color: silver;
+}

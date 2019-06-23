@@ -1,0 +1,38 @@
+<form [formGroup]="formdata" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Create new Office</h1>
+    <hr>
+
+    <label for="name"><b>Office's Name</b></label>
+    <input type="text" placeholder="Enter Office's Name" formControlName="officeName" required>
+
+    <label for="numberOfOffice"><b>Number of Office</b></label>
+    <input type="number" placeholder="Enter Office's Number" formControlName="officeNumber" required>
+
+    <label for="phoneNumber"><b>Phone Number</b></label>
+    <input type="tel" placeholder="Enter Office's Phone Number" formControlName="phoneNumber" required>
+
+    <label for="officeField"><b>Field of Office</b></label>
+    <input type="text" placeholder="Enter Office's Field" formControlName="officeField" required>
+
+    <label for="numberOfMember"><b>Number of member</b></label>
+    <input type="number" placeholder="Enter Office's Member" formControlName="numberOfMember" required>
+
+    <label for="officeManagerId"><b>Manager's Id</b></label>
+    <input type="text" placeholder="Enter Identification of Manager" formControlName="officeManagerId" required>
+
+    <label for="office"><b>Office</b></label>
+    <select class="office">
+      <option value="developOffice">Develop Office</option>
+      <option value="analystOffice">Analyst Office</option>
+      <option value="directorOffice">Director Office</option>
+    </select>
+    
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="createbtn" (click)="createOffice()">Create</button>
+    </div>
+  </div>
+</form>
