@@ -17,8 +17,8 @@ export class ApproveFormComponent implements OnInit {
       officeNumber: new FormControl("", Validators.required),
       officeField: new FormControl("", Validators.required),
       officeName: new FormControl("", Validators.required),
-      officeManagerId:  new FormControl("", Validators.required)
-   });
+      officeManagerId: new FormControl("", Validators.required)
+    });
   }
 
 }

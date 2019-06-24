@@ -18,27 +18,33 @@ import { CreateTaskComponent } from './create-task/create-task.component';
 import { CreateSubtaskComponent } from './create-subtask/create-subtask.component';
 import { ViewStaffComponent } from './view-staff/view-staff.component';
 import { ViewOfficeComponent } from './view-office/view-office.component';
+import { ListStaffComponent } from './list-staff/list-staff.component';
+import { ListOfficeComponent } from './list-office/list-office.component';
+import { CreateProjectComponent } from './create-project/create-project.component';
 
 
 const routes: Routes = [
   {path:"", component: HomePageComponent},
   {path:"createStaff", component: CreateStaffComponent},
   {path:"createOffice", component: CreateOfficeComponent},
-  {path:"viewUserStory", component: ViewUserStoryComponent },
-  {path:"viewSubtask", component: ViewSubtaskComponent },
-  {path:"viewTask", component: ViewTaskComponent },
+  {path:"viewUserStory/:id", component: ViewUserStoryComponent },
+  {path:"viewSubtask/:id", component: ViewSubtaskComponent },
+  {path:"viewTask/:id", component: ViewTaskComponent },
   {path:"createUserStory", component: CreateUserStoryComponent },
   {path:"createTask", component: CreateTaskComponent },
   {path:"createSubtask", component: CreateSubtaskComponent },
   {path:"header", component: HeaderComponent },
   {path:"approveForm", component: ApproveFormComponent },
-  {path:"viewProject", component: ViewProjectComponent },
-  {path:"viewDetail" , component: ViewDetailComponent},
-  {path:"taskDetail" , component: TaskDetailComponent},
-  {path:"projectManage", component: ProjectManageComponent},
-  {path:"userStoryDetail", component: UserStoryDetailComponent},
+  {path:"viewProject/:id", component: ViewProjectComponent },
+  {path:"viewDetail/:id" , component: ViewDetailComponent},
+  {path:"taskDetail/:id" , component: TaskDetailComponent},
+  {path:"projectManage/:id", component: ProjectManageComponent},
+  {path:"userStoryDetail/:id", component: UserStoryDetailComponent},
   {path:"viewStaff/:id", component: ViewStaffComponent},
-  {path:"viewOffice/:id", component: ViewOfficeComponent}
+  {path:"listStaff/:id", component: ListStaffComponent},
+  {path:"listOffice/:id", component: ListOfficeComponent},
+  {path:"viewOffice/:id", component: ViewOfficeComponent},
+  {path:"createProject", component: CreateProjectComponent}
 ];
 
 

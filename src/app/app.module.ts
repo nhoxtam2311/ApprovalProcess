@@ -25,6 +25,8 @@ import { UserStoryDetailComponent } from './user-story-detail/user-story-detail.
 import { ViewStaffComponent } from './view-staff/view-staff.component';
 import { ViewOfficeComponent } from './view-office/view-office.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
+import { ListStaffComponent } from './list-staff/list-staff.component';
+import { ListOfficeComponent } from './list-office/list-office.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { CreateProjectComponent } from './create-project/create-project.componen
     ViewStaffComponent,
     ViewOfficeComponent,
     CreateProjectComponent,
+    ListStaffComponent,
+    ListOfficeComponent,
   ],
   imports: [
     BrowserModule,

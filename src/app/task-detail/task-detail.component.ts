@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-task-detail',
@@ -7,12 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(public http: HttpClient, public route: ActivatedRoute) { }
 
+  id: String;
+  taskDetail: any = {};
   ngOnInit() {
+    this.route.params.subscribe(p => {
+      this.id = p['id'];
+    })
+    this.http.get(`api/tasks/${this.id}`).subscribe(data => {
+      this.taskDetail = data;
+      console.log(this.taskDetail)
+    })
   }
-  listMenu: Array<any>=[
-    { route: "/viewTask", description: "Task"},
-    { route: "/taskDetail", description: "Subtasks"} 
+  listMenu: Array<any> = [
+    { route: "/viewTask/:id", description: "Task" },
+    { route: "/taskDetail/:id", description: "Subtasks" }
   ]
 }

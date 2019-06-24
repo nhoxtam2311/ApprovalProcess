@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view-user-story',
@@ -7,14 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewUserStoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(public http: HttpClient, public route: ActivatedRoute) { }
+
+  id: String;
+  userStory: any = {};
 
   ngOnInit() {
+    this.route.params.subscribe(p => {
+      this.id = p['id'];
+    })
+    this.http.get(`api/userStories/${this.id}`).subscribe(data => {
+      this.userStory = data;
+      console.log(this.userStory)
+    })
   }
 
-  listMenu: Array<any>=[
-    { route: "/viewUserstory", description: "User Story"},
-    { route: "/viewDetail", description: "Tasks"}
+  listMenu: Array<any> = [
+    { route: "/viewUserstory/:id", description: "User Story" },
+    { route: "/viewDetail/:id", description: "Tasks" }
   ]
 
 }

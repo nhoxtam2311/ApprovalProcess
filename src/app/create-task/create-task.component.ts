@@ -16,14 +16,13 @@ export class CreateTaskComponent implements OnInit {
       fieldOfTask: new FormControl("", Validators.required),
       relatedOffice: new FormControl("", Validators.required),
       deadline: new FormControl("", Validators.required),
-      description:  new FormControl("", Validators.required)
-   });
+      description: new FormControl("", Validators.required)
+    });
   }
   createTask(): void {
     this.http.post("api/tasks", this.formdata.value
-    ).subscribe(result=>{
+    ).subscribe(result => {
       console.log(result);
     })
-    console.log('hello')
   }
 }

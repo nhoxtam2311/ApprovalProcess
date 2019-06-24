@@ -16,16 +16,15 @@ export class CreateUserStoryComponent implements OnInit {
       nameOfEvent: new FormControl("", Validators.required),
       startDate: new FormControl("", Validators.required),
       endDate: new FormControl("", Validators.required),
-      description:  new FormControl("", Validators.required),
+      description: new FormControl("", Validators.required),
       responsibleOffice: new FormControl("", Validators.required),
       deadline: new FormControl("", Validators.required),
     });
   }
   createUserStory(): void {
     this.http.post("api/userStories", this.formdata.value
-    ).subscribe(result=>{
+    ).subscribe(result => {
       console.log(result);
     })
-    console.log('hello')
   }
 }

@@ -19,13 +19,13 @@ export class CreateOfficeComponent implements OnInit {
       officeNumber: new FormControl("", Validators.required),
       officeField: new FormControl("", Validators.required),
       officeName: new FormControl("", Validators.required),
-      officeManagerId:  new FormControl("", Validators.required)
-   });
+      officeManagerId: new FormControl("", Validators.required)
+    });
   }
-  
+
   createOffice(): void {
     this.http.post("api/analystOffices", this.formdata.value
-    ).subscribe(result=>{
+    ).subscribe(result => {
       console.log(result);
     })
     console.log('hello')

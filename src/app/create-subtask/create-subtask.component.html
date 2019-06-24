@@ -7,7 +7,7 @@
     <input type="text" placeholder="Enter Event's Name" formControlName="fieldOfSubtask" required>
 
     <label for="deadline"><b>Deadline</b></label>
-    <input type="date"  formControlName="deadline" required>
+    <input type="date" formControlName="deadline" required>
 
     <label for="description"><b>Description</b></label>
     <input type="text" placeholder="Description" formControlName="description" required>
@@ -16,11 +16,11 @@
     <select formControlName="relatedStaffs" form="office">
 
     </select>
-    
+
     <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
-      <a class="btn btn-primary" routerLink="/taskDetail">Cancel</a>
+      <a class="btn btn-primary" routerLink="/taskDetail/:id">Cancel</a>
       <a class="btn btn-success requestBtn" (click)="createSubtask()">Request</a>
     </div>
   </div>

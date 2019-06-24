@@ -16,12 +16,12 @@ export class CreateSubtaskComponent implements OnInit {
       fieldOfSubtask: new FormControl("", Validators.required),
       relatedStaffs: new FormControl("", Validators.required),
       deadline: new FormControl("", Validators.required),
-      description:  new FormControl("", Validators.required)
-   });
+      description: new FormControl("", Validators.required)
+    });
   }
   createSubtask(): void {
     this.http.post("api/subTasks", this.formdata.value
-    ).subscribe(result=>{
+    ).subscribe(result => {
       console.log(result);
     })
     console.log('hello')

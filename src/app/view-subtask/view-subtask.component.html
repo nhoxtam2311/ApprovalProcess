@@ -1,9 +1,11 @@
 <app-menu-user-story [listMenu]="listMenu"></app-menu-user-story>
 <div>
     <h2>View Subtask</h2>
-<label for="name"><b>Name of Event</b></label>
-<input type="text" placeholder="Enter Event's Name" name="name" required>
-<label for="name"><b>Name of Event</b></label>
-<input type="text" placeholder="Enter Event's Name" name="name" required>
-<!-- <input type="button" name="create" value="create" routerLink="/createSubtask"> -->
+    <details>
+        <summary>Field of Subtask: {{subTask.fieldOfSubtask}}</summary>
+        <span>Deadline: {{ subTask.deadline }}</span><br>
+        <span>Description: {{ subTask.description }}</span><br>
+        <span>Assigned to: {{ subTask.relatedStaffs }}</span><br>
+    </details>
+    <!-- <input type="button" name="create" value="create" routerLink="/createSubtask"> -->
 </div>

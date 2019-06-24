@@ -8,9 +8,9 @@ describe('ViewStaffComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewStaffComponent ]
+      declarations: [ViewStaffComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

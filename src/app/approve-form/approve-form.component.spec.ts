@@ -8,9 +8,9 @@ describe('ApproveFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApproveFormComponent ]
+      declarations: [ApproveFormComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

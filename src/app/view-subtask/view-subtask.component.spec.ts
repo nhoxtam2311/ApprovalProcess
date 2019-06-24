@@ -8,9 +8,9 @@ describe('ViewSubtaskComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewSubtaskComponent ]
+      declarations: [ViewSubtaskComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

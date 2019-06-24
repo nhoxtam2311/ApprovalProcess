@@ -15,10 +15,10 @@ export class ViewStaffComponent implements OnInit {
   staff: any = {};
 
   ngOnInit() {
-    this.route.params.subscribe(p=>{
+    this.route.params.subscribe(p => {
       this.id = p['id'];
     })
-    this.http.get(`api/staffs/${this.id}`).subscribe(data=>{
+    this.http.get(`api/staffs/${this.id}`).subscribe(data => {
       this.staff = data;
       console.log(this.staff)
     })

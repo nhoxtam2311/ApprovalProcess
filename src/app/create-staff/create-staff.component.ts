@@ -13,7 +13,7 @@ export class CreateStaffComponent implements OnInit {
   constructor(public http: HttpClient, private router: Router) { }
 
   formdata: FormGroup;
-  ngOnInit() { 
+  ngOnInit() {
     this.formdata = new FormGroup({
       name: new FormControl("", Validators.required),
       phoneNumber: new FormControl("", Validators.required),
@@ -23,13 +23,13 @@ export class CreateStaffComponent implements OnInit {
       gender: new FormControl("", Validators.required),
       age: new FormControl("", Validators.required),
       dateOfBirth: new FormControl("", Validators.required),
-      email:  new FormControl("", Validators.required)
-   });
+      email: new FormControl("", Validators.required)
+    });
   }
 
   createStaff(): void {
     this.http.post("api/staffs", this.formdata.value
-    ).subscribe(result=>{
+    ).subscribe(result => {
       this.router.navigate(['viewStaff', result['_id']])
     })
 

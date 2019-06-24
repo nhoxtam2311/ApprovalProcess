@@ -1,8 +1,14 @@
 <app-menu-user-story [listMenu]="listMenu"></app-menu-user-story>
 <div>
     <h2>Project</h2>
-<label for="name"><b>Name of Event</b></label>
-<input type="text" placeholder="Enter Event's Name" name="name" required>
-<label for="name"><b>Name of Event</b></label>
-<input type="text" placeholder="Enter Event's Name" name="name" required>
+    <details>
+        <summary>Name of Project: {{project.nameOfProject}}</summary>
+
+        <span>The Commencing Day: {{ project.startDate }}</span><br>
+        <span>The Ending Day: {{ project.endDate }}</span><br>
+        <span>Deadline: {{ project.deadline }}</span><br>
+        <span>Description: {{ project.description }}</span><br>
+        <span>Office: {{ project.responsibleOffice }}</span><br>
+
+    </details>
 </div>
