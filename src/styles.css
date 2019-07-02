@@ -48,3 +48,7 @@ input[type=button]:hover{
     color: white;
     background-color: silver;
 }
+details{
+    font-size: 20px;
+    padding-left: 100px;
+}

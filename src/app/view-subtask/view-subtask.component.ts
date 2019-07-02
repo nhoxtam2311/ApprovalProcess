@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view-subtask',
@@ -7,12 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewSubtaskComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public http: HttpClient, public route: ActivatedRoute) { }
+  id: String;
+  subTask: any = {};
   ngOnInit() {
+    this.route.params.subscribe(p => {
+      this.id = p['id'];
+    })
+    this.http.get(`api/subTasks/${this.id}`).subscribe(data => {
+      this.subTask = data;
+      console.log(this.subTask)
+    })
   }
-listMenu: Array<any>=[
-  {route:"/viewSubtask", description:"Subtask"}
-]
-  
+  listMenu: Array<any> = [
+    { route: "/viewSubtask/:id", description: "Subtask" }
+  ]
+
 }

@@ -27,12 +27,12 @@
       <option value="analystOffice">Analyst Office</option>
       <option value="directorOffice">Director Office</option>
     </select>
-    
+
     <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="createbtn" (click)="createOffice()">Create</button>
-    </div>
+        <a class="btn btn-primary requestBtn" routerLink="/listOffice/:id">Cancel</a>
+        <a class="btn btn-success requestBtn" (click)="createOffice()">Request</a>
+      </div>
   </div>
 </form>

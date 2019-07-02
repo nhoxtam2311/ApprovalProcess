@@ -1,8 +1,10 @@
 <app-menu-user-story [listMenu]="listMenu"></app-menu-user-story>
 <div>
     <h2>View Task</h2>
-<label for="name"><b>Name of Event</b></label>
-<input type="text" placeholder="Enter Event's Name" name="name" required>
-<label for="name"><b>Name of Event</b></label>
-<input type="text" placeholder="Enter Event's Name" name="name" required>
+    <details>
+        <summary>Field of Task: {{task.fieldOfTask}}</summary>
+        <span>Deadline: {{ task.deadline }}</span><br>
+        <span>Description: {{ task.description }}</span><br>
+        <span>Office: {{ task.relatedOffice }}</span><br>
+    </details>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-story-detail',
@@ -7,12 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserStoryDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(public http: HttpClient, public route: ActivatedRoute) { }
+
+  id: String;
+  userStoryDetails: any = [];
 
   ngOnInit() {
+    this.http.get(`api/userStories`).subscribe(data => {
+      this.userStoryDetails = data["_embedded"]["userStories"];
+    })
   }
-  listMenu: Array<any>=[
-    { route: "/viewProject", description: "Project Management"},
-    { route: "/userStoryDetail", description: "User Story"}
+
+  delete(id: string, i: number){
+    this.http.delete(`api/userStories/${id}`).subscribe(data => {
+      this.userStoryDetails.splice(i, 1);
+    })
+  }
+
+  listMenu: Array<any> = [
+    { route: "/viewProject/:id", description: "Project Management" },
+    { route: "/userStoryDetail/:id", description: "User Story" }
   ]
 }

@@ -13,5 +13,5 @@ export class MenuUserStoryComponent implements OnInit {
   }
 
   @Input()
-  listMenu: Array<any>;  
+  listMenu: Array<any>;
 }

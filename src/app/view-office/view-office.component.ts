@@ -15,10 +15,10 @@ export class ViewOfficeComponent implements OnInit {
   office: any = {};
 
   ngOnInit() {
-    this.route.params.subscribe(p=>{
+    this.route.params.subscribe(p => {
       this.id = p['id'];
     })
-    this.http.get(`api/analystOffices/${this.id}`).subscribe(data=>{
+    this.http.get(`api/analystOffices/${this.id}`).subscribe(data => {
       this.office = data;
       console.log(this.office)
     })

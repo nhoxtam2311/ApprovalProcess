@@ -1,0 +1,35 @@
+<form [formGroup]="formdata" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Update User Story</h1>
+    <hr>
+
+    <label for="name"><b>Name of Event</b></label>
+    <input type="text" placeholder="Enter Event's Name" formControlName="nameOfEvent" required>
+
+    <label for="startingDate"><b>The Commencing Day</b></label>
+    <input type="date" formControlName="startDate" required>
+
+    <label for="endingDate"><b>The Ending Day</b></label>
+    <input type="date" formControlName="endDate" required>
+
+    <label for="deadline"><b>Deadline</b></label>
+    <input type="date" formControlName="deadline" required>
+
+    <label for="description"><b>Description</b></label>
+    <input type="text" placeholder="Description" formControlName="description" required>
+
+    <label for="office"><b>Office</b></label>
+    <select formControlName="responsibleOffice">
+      <option value="analyst">Analyst Office</option>
+      <option value="develop">Develop Office</option>
+      <option value="director">Director Office</option>
+    </select>
+
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <a class="btn btn-primary" routerLink="/userStoryDetail/:id">Cancel</a>
+      <a class="btn btn-success requestBtn" (click)="createUserStory()">Modify</a>
+    </div>
+  </div>
+</form>
