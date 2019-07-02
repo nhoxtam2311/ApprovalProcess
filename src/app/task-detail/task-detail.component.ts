@@ -12,16 +12,19 @@ export class TaskDetailComponent implements OnInit {
   constructor(public http: HttpClient, public route: ActivatedRoute) { }
 
   id: String;
-  taskDetail: any = {};
+  taskDetails: any = [];
   ngOnInit() {
-    this.route.params.subscribe(p => {
-      this.id = p['id'];
-    })
-    this.http.get(`api/tasks/${this.id}`).subscribe(data => {
-      this.taskDetail = data;
-      console.log(this.taskDetail)
+    this.http.get(`api/subTasks`).subscribe(data => {
+      this.taskDetails = data["_embedded"]["subTasks"];
     })
   }
+
+  delete(id: string, i: number){
+    this.http.delete(`api/subTasks/${id}`).subscribe(data => {
+      this.taskDetails.splice(i, 1);
+    })
+  }
+
   listMenu: Array<any> = [
     { route: "/viewTask/:id", description: "Task" },
     { route: "/taskDetail/:id", description: "Subtasks" }

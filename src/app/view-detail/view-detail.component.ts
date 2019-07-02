@@ -12,15 +12,17 @@ export class ViewDetailComponent implements OnInit {
   constructor(public http: HttpClient, public route: ActivatedRoute) { }
 
   id: String;
-  detail: any = {};
+  details: any = [];
 
   ngOnInit() {
-    this.route.params.subscribe(p => {
-      this.id = p['id'];
+    this.http.get(`api/tasks`).subscribe(data => {
+      this.details = data["_embedded"]["tasks"];
     })
-    this.http.get(`api/tasks/${this.id}`).subscribe(data => {
-      this.detail = data;
-      console.log(this.detail)
+  }
+
+  delete(id: string, i: number){
+    this.http.delete(`api/tasks/${id}`).subscribe(data => {
+      this.details.splice(i, 1);
     })
   }
 

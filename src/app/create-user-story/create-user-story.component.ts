@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-user-story',
@@ -9,7 +10,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CreateUserStoryComponent implements OnInit {
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient,
+    public route: Router) { }
   formdata: FormGroup;
   ngOnInit() {
     this.formdata = new FormGroup({
@@ -24,7 +26,6 @@ export class CreateUserStoryComponent implements OnInit {
   createUserStory(): void {
     this.http.post("api/userStories", this.formdata.value
     ).subscribe(result => {
-      console.log(result);
-    })
+      this.route.navigate(['viewUserStory', result['_id']])    })
   }
 }

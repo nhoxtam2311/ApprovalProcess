@@ -1,9 +1,13 @@
 <div class="w3-container">
   <h2>Project Management</h2>
   <ul class="w3-ul w3-card-4">
-    <li class="w3-bar">
-      <span onclick="this.parentElement.style.display='none'"
-        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+    <li *ngFor="let project of projects; let i = index" class="w3-bar">
+      <span (click)="delete(project._id, i)"
+        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Delete</span>
+        <span [routerLink]="'/editProject/'+ project._id"
+        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Edit</span>
+        <span [routerLink]="'/viewProject/'+ project._id"
+        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Info</span>
       <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
       <details>
         <summary>Name of Project: {{project.nameOfProject}}</summary>
@@ -16,37 +20,6 @@
         </div>
       </details>
     </li>
-    <li class="w3-bar">
-      <span onclick="this.parentElement.style.display='none'"
-        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
-      <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
-      <details>
-        <summary>Name of Project: {{project.nameOfProject}}</summary>
-        <div class="w3-bar-item">
-          <span>The Commencing Day: {{ project.startDate }}</span><br>
-          <span>The Ending Day: {{ project.endDate }}</span><br>
-          <span>Deadline: {{ project.deadline }}</span><br>
-          <span>Description: {{ project.description }}</span><br>
-          <span>Office: {{ project.responsibleOffice }}</span><br>
-        </div>
-      </details>
-    </li>
-    <li class="w3-bar">
-      <span onclick="this.parentElement.style.display='none'"
-        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
-      <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
-      <details>
-        <summary>Name of Project: {{project.nameOfProject}}</summary>
-        <div class="w3-bar-item">
-          <span>The Commencing Day: {{ project.startDate }}</span><br>
-          <span>The Ending Day: {{ project.endDate }}</span><br>
-          <span>Deadline: {{ project.deadline }}</span><br>
-          <span>Description: {{ project.description }}</span><br>
-          <span>Office: {{ project.responsibleOffice }}</span><br>
-        </div>
-      </details>
-    </li>
-
   </ul>
   <input type="button" name="create" value="create" class="create" routerLink="/createProject">
 </div>

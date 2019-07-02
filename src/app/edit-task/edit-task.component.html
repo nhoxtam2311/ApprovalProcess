@@ -1,0 +1,29 @@
+<form *ngIf="formdata" [formGroup]="formdata" action="/action_page.php" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Update Task</h1>
+    <hr>
+
+    <label for="name"><b>Field of Task</b></label>
+    <input type="text" placeholder="Enter Event's Name" formControlName="fieldOfTask" required>
+
+    <label for="deadline"><b>Deadline</b></label>
+    <input type="datetime-local" formControlName="deadline" required>
+
+    <label for="description"><b>Description</b></label>
+    <input type="text" placeholder="Description" formControlName="description" required>
+
+    <!-- <label for="numberOfOffice"><b>Number of Related Office</b></label>
+    <input type="number" placeholder="Number of Related Office" name="numberOfOffice" required> -->
+
+    <label for="relatedOffice"><b>Office</b></label>
+    <select formControlName="relatedOffice" form="office">
+    </select>
+
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <a class="btn btn-primary" routerLink="/viewDetail/:id">Cancel</a>
+      <a class="btn btn-success requestBtn" (click)="update()">Modify</a>
+    </div>
+  </div>
+</form>

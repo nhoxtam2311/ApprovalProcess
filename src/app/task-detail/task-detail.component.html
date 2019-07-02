@@ -2,9 +2,13 @@
 <div class="w3-container">
   <h2>Subtask</h2>
   <ul class="w3-ul w3-card-4">
-    <li class="w3-bar">
-      <span onclick="this.parentElement.style.display='none'"
-        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+    <li *ngFor="let taskDetail of taskDetails; let i = index" class="w3-bar">
+      <span (click)="delete(taskDetail._id, i)"
+        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Delete</span>
+        <span [routerLink]="'/editSubtask/'+ taskDetail._id"
+        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Edit</span>
+        <span [routerLink]="'/viewSubtask/'+ taskDetail._id"
+        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Info</span>
       <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
       <details>
         <summary>Field of Subtask: {{taskDetail.fieldOfSubtask}}</summary>
@@ -13,41 +17,8 @@
           <span>Description: {{ taskDetail.description }}</span><br>
           <span>Assigned to: {{ taskDetail.relatedStaffs }}</span><br>
         </div>
-
-
       </details>
     </li>
-    <li class="w3-bar">
-      <span onclick="this.parentElement.style.display='none'"
-        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
-      <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
-      <details>
-        <summary>Field of Subtask: {{taskDetail.fieldOfSubtask}}</summary>
-        <div class="w3-bar-item">
-          <span>Deadline: {{ taskDetail.deadline }}</span><br>
-          <span>Description: {{ taskDetail.description }}</span><br>
-          <span>Assigned to: {{ taskDetail.relatedStaffs }}</span><br>
-        </div>
-
-
-      </details>
-    </li>
-    <li class="w3-bar">
-      <span onclick="this.parentElement.style.display='none'"
-        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
-      <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
-      <details>
-        <summary>Field of Subtask: {{taskDetail.fieldOfSubtask}}</summary>
-        <div class="w3-bar-item">
-          <span>Deadline: {{ taskDetail.deadline }}</span><br>
-          <span>Description: {{ taskDetail.description }}</span><br>
-          <span>Assigned to: {{ taskDetail.relatedStaffs }}</span><br>
-        </div>
-
-
-      </details>
-    </li>
-
 
   </ul>
   <input type="button" name="create" value="create" class="create" routerLink="/createSubtask">

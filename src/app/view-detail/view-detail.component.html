@@ -2,9 +2,13 @@
 <div class="w3-container">
   <h2>Tasks</h2>
   <ul class="w3-ul w3-card-4">
-    <li class="w3-bar">
-      <span onclick="this.parentElement.style.display='none'"
-        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+    <li *ngFor="let detail of details; let i = index" class="w3-bar">
+      <span (click)="delete(detail._id, i)"
+        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Delete</span>
+        <span [routerLink]="'/editTask/'+ detail._id"
+        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Edit</span>
+        <span [routerLink]="'/viewTask/'+ detail._id"
+        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Info</span>
       <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
       <details>
         <summary>Field of Task: {{detail.fieldOfTask}}</summary>
@@ -16,38 +20,6 @@
         </div>
       </details>
     </li>
-
-    <li class="w3-bar">
-      <span onclick="this.parentElement.style.display='none'"
-        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
-      <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
-      <details>
-        <summary>Field of Task: {{detail.fieldOfTask}}</summary>
-        <div class="w3-bar-item">
-
-          <span>Deadline: {{ detail.deadline }}</span><br>
-          <span>Description: {{ detail.description }}</span><br>
-          <span>Office: {{ detail.relatedOffice }}</span><br>
-        </div>
-      </details>
-    </li>
-
-    <li class="w3-bar">
-      <span onclick="this.parentElement.style.display='none'"
-        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
-      <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
-      <details>
-        <summary>Field of Task: {{detail.fieldOfTask}}</summary>
-        <div class="w3-bar-item">
-
-          <span>Deadline: {{ detail.deadline }}</span><br>
-          <span>Description: {{ detail.description }}</span><br>
-          <span>Office: {{ detail.relatedOffice }}</span><br>
-        </div>
-      </details>
-    </li>
-
-
   </ul>
   <input type="button" name="create" value="create" class="create" routerLink="/createTask">
 </div>

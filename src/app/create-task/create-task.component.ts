@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-task',
@@ -9,7 +10,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CreateTaskComponent implements OnInit {
 
-  constructor(public http: HttpClient) { }
+  constructor(
+    public route: Router,
+    public http: HttpClient) { }
   formdata: FormGroup;
   ngOnInit() {
     this.formdata = new FormGroup({
@@ -22,7 +25,7 @@ export class CreateTaskComponent implements OnInit {
   createTask(): void {
     this.http.post("api/tasks", this.formdata.value
     ).subscribe(result => {
-      console.log(result);
+      this.route.navigate(['viewTask', result['_id']])   
     })
   }
 }

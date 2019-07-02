@@ -27,6 +27,12 @@ import { ViewOfficeComponent } from './view-office/view-office.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { ListStaffComponent } from './list-staff/list-staff.component';
 import { ListOfficeComponent } from './list-office/list-office.component';
+import { EditStaffComponent } from './edit-staff/edit-staff.component';
+import { EditOfficeComponent } from './edit-office/edit-office.component';
+import { EditProjectComponent } from './edit-project/edit-project.component';
+import { EditUserStoryComponent } from './edit-user-story/edit-user-story.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
+import { EditSubtaskComponent } from './edit-subtask/edit-subtask.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +59,12 @@ import { ListOfficeComponent } from './list-office/list-office.component';
     CreateProjectComponent,
     ListStaffComponent,
     ListOfficeComponent,
+    EditStaffComponent,
+    EditOfficeComponent,
+    EditProjectComponent,
+    EditUserStoryComponent,
+    EditTaskComponent,
+    EditSubtaskComponent,
   ],
   imports: [
     BrowserModule,

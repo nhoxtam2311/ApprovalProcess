@@ -1,0 +1,27 @@
+<div class="w3-container">
+  <h2>Staff</h2>
+  <ul class="w3-ul w3-card-4">
+    <li *ngFor="let staff of staffs; let i = index" class="w3-bar">
+      <span (click)="delete(staff._id, i)"
+        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Delete</span>
+        <span [routerLink]="'/editStaff/'+ staff._id"
+        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Edit</span>
+        <span [routerLink]="'/viewStaff/'+ staff._id"
+        class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Info</span>
+      <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <details>
+        <summary>Name: {{staff.name}}</summary>
+        <div class="w3-bar-item">
+          <span>Age: {{ staff.age }}</span><br>
+          <span>Phone Number: {{ staff.phoneNumber }}</span><br>
+          <span>Date of Birth: {{ staff.dateOfBirth }}</span><br>
+          <span>Gender: {{ staff.gender }}</span><br>
+          <span>Email: {{ staff.email }}</span><br>
+          <span>Address: {{ staff.address }}</span><br>
+          <span>Office: {{ staff.workFor }}</span><br>
+          <span>Position: {{ staff.position }}</span><br> </div>
+      </details>
+    </li>
+  </ul>
+  <input type="button" name="create" value="create" class="create" routerLink="/createStaff">
+</div>

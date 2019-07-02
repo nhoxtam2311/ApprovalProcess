@@ -1,0 +1,25 @@
+<div class="w3-container">
+  <h2>Office</h2>
+  <ul class="w3-ul w3-card-4">
+    <li *ngFor="let office of offices; let i = index" class="w3-bar">
+      <span (click)="delete(office._id, i)"
+      class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Delete</span>
+      <span [routerLink]="'/editOffice/'+ office._id"
+      class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Edit</span>
+      <span [routerLink]="'/viewOffice/'+ office._id"
+      class="w3-bar-item w3-button w3-white w3-xlarge w3-right">Info</span>
+      <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <details>
+        <summary>Name: {{office.officeName}}</summary>
+        <div class="w3-bar-item">
+          <span>Office ID: {{ office.officeManagerId }}</span><br>
+          <span>Office Room: {{ office.officeNumber }}</span><br>
+          <span>Office's Field: {{ office.officeField }}</span><br>
+          <span>Phone Number: {{ office.phoneNumber }}</span><br>
+          <span>Office Manager: {{ office.officeManagerId }}</span><br>
+        </div>
+      </details>
+    </li>
+  </ul>
+  <input type="button" name="create" value="create" class="create" routerLink="/createOffice">
+</div>

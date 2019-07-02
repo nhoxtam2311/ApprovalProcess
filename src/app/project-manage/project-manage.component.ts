@@ -12,15 +12,16 @@ export class ProjectManageComponent implements OnInit {
   constructor(public http: HttpClient, public route: ActivatedRoute) { }
 
   id: String;
-  project: any = {};
+  projects: any = [];
 
   ngOnInit() {
-    this.route.params.subscribe(p => {
-      this.id = p['id'];
+    this.http.get(`api/projects`).subscribe(data => {
+      this.projects = data["_embedded"]["projects"];
     })
-    this.http.get(`api/projects/${this.id}`).subscribe(data => {
-      this.project = data;
-      console.log(this.project)
+  }
+  delete(id: string, i: number){
+    this.http.delete(`api/projects/${id}`).subscribe(data => {
+      this.projects.splice(i, 1);
     })
   }
 

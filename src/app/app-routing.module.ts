@@ -21,6 +21,12 @@ import { ViewOfficeComponent } from './view-office/view-office.component';
 import { ListStaffComponent } from './list-staff/list-staff.component';
 import { ListOfficeComponent } from './list-office/list-office.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
+import { EditStaffComponent } from './edit-staff/edit-staff.component';
+import { EditOfficeComponent } from './edit-office/edit-office.component';
+import { EditProjectComponent } from './edit-project/edit-project.component';
+import { EditUserStoryComponent } from './edit-user-story/edit-user-story.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
+import { EditSubtaskComponent } from './edit-subtask/edit-subtask.component';
 
 
 const routes: Routes = [
@@ -41,10 +47,16 @@ const routes: Routes = [
   {path:"projectManage/:id", component: ProjectManageComponent},
   {path:"userStoryDetail/:id", component: UserStoryDetailComponent},
   {path:"viewStaff/:id", component: ViewStaffComponent},
-  {path:"listStaff/:id", component: ListStaffComponent},
-  {path:"listOffice/:id", component: ListOfficeComponent},
+  {path:"listStaff", component: ListStaffComponent},
+  {path:"listOffice", component: ListOfficeComponent},
   {path:"viewOffice/:id", component: ViewOfficeComponent},
-  {path:"createProject", component: CreateProjectComponent}
+  {path:"createProject", component: CreateProjectComponent},
+  {path:"editStaff/:id", component: EditStaffComponent},
+  {path:"editOffice/:id", component: EditOfficeComponent},
+  {path:"editProject/:id", component: EditProjectComponent},
+  {path:"editUserStory/:id", component: EditUserStoryComponent},
+  {path:"editTask/:id", component: EditTaskComponent},
+  {path:"editSubtask/:id", component: EditSubtaskComponent}
 ];
 
 
