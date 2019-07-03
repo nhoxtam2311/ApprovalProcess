@@ -44,7 +44,7 @@ const routes: Routes = [
   {path:"viewProject/:id", component: ViewProjectComponent },
   {path:"viewDetail/:id" , component: ViewDetailComponent},
   {path:"taskDetail/:id" , component: TaskDetailComponent},
-  {path:"projectManage/:id", component: ProjectManageComponent},
+  {path:"projectManage", component: ProjectManageComponent},
   {path:"userStoryDetail/:id", component: UserStoryDetailComponent},
   {path:"viewStaff/:id", component: ViewStaffComponent},
   {path:"listStaff", component: ListStaffComponent},

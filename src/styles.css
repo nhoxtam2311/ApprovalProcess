@@ -14,25 +14,20 @@ app-menu-task{
     width: 15%;
     height: 100vh;
 }
-background{
-    background-color: white;
-}
 
 app-menu-subtask{
     display: inline-block;
     width: 15%;
     height: 100vh;
 }
-background{
-    background-color: white;
+body{
+    background-image: url("src/app/image/img2.jpg");
+     
 }
 app-menu-user-story{
     display: inline-block;
     width: 15%;
     height: 100vh;
-}
-background{
-    background-color: white;
 }
 input[type=button]{
     float: right;
